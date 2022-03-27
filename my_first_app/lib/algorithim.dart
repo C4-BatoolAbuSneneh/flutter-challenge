@@ -220,7 +220,7 @@ class Sorting extends State<Sort> {
                 child: Column(
                   children: <Widget>[
                     ElevatedButton(
-                      child: const Text('Analyzer'),
+                      child: const Text('Visualizer'),
                       // color: Colors.black,
                       onPressed: () {
                         Navigator.push(

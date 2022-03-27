@@ -27,8 +27,6 @@ class MyApp extends StatelessWidget {
               MaterialPageRoute(builder: (context) => Visual()),
             );
           },
-
-          
         ),
       ),
     );

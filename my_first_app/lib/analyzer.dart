@@ -1,9 +1,9 @@
-// import 'package:avatar_glow/avatar_glow.dart';
-// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-// import 'package:google_fonts/google_fonts.dart';
+import 'package:my_first_app/algorithim.dart';
 
 class Visual extends StatefulWidget {
+  const Visual({Key? key}) : super(key: key);
+
   @override
   _VisualState createState() => _VisualState();
 }
@@ -81,7 +81,7 @@ class _VisualState extends State<Visual> {
   }
 
   selectionSortVisualiser(List a) async {
-    print('Selection sort visualiser called');
+    // print('Selection sort visualiser called');
     List<int> selectArr = List.from(a);
     int minIndex, temp;
 
@@ -106,7 +106,7 @@ class _VisualState extends State<Visual> {
   }
 
   _insertionSortVisualiser(List a) async {
-    print('Insertion sort visualiser called');
+    // print('Insertion sort visualiser called');
     List<int> insertArr = List.from(a);
     int key, j;
 
@@ -128,7 +128,7 @@ class _VisualState extends State<Visual> {
   }
 
   _quickSortVisualiser(List<int> quickArr, int low, int high) async {
-    print('Quick sort visualiser called');
+    // print('Quick sort visualiser called');
     int pivot;
     if (low < high) {
       /* pi is partitioning index, arr[pi] is now
@@ -162,8 +162,8 @@ class _VisualState extends State<Visual> {
   }
 
   _mergeSortVisualiser(List<int> mergeArr, int low, int high) async {
-    print('Merge Sort called');
-    print('Array size is : "${mergeArr.length}"');
+    // print('Merge Sort called');
+    // print('Array size is : "${mergeArr.length}"');
     if (low < high) {
       // Same as (l+r)/2, but avoids overflow for
       // large l and h
@@ -188,11 +188,12 @@ class _VisualState extends State<Visual> {
     List<int> L = [], R = [];
 
     /* Copy data to temp arrays L[] and R[] */
-    for (i = 0; i < n1; i++)
-      L.add(mergeArr[low + i]); //L[i] = mergeArr[low + i];
-    for (j = 0; j < n2; j++)
-      R.add(mergeArr[mid + 1 + j]); //R[j] = mergeArr[mid + 1 + j];
-
+    for (i = 0; i < n1; i++) {
+      L.add(mergeArr[low + i]);
+    } //L[i] = mergeArr[low + i];
+    for (j = 0; j < n2; j++) {
+      R.add(mergeArr[mid + 1 + j]);
+    } //R[j] = mergeArr[mid + 1 + j];
     i = 0;
     j = 0;
     k = low;
@@ -221,23 +222,23 @@ class _VisualState extends State<Visual> {
     }
   }
 
-  _heapSortVisualiser(List<int> heapArr) async {
-    int n = heapArr.length;
+  // _heapSortVisualiser(List<int> heapArr) async {
+  //   int n = heapArr.length;
 
-    // Build heap (rearrange array)
-    for (int i = n ~/ 2 - 1; i >= 0; i--) await heapify(heapArr, n, i);
+  //   // Build heap (rearrange array)
+  //   for (int i = n ~/ 2 - 1; i >= 0; i--) await heapify(heapArr, n, i);
 
-    // One by one extract an element from heap
-    for (int i = n - 1; i >= 0; i--) {
-      // Move current root to end
-      int temp = heapArr[0];
-      heapArr[0] = heapArr[i];
-      heapArr[i] = temp;
-      await _updateArrayWithDelay(heapArr);
-      // call max heapify on the reduced heap
-      await heapify(heapArr, i, 0);
-    }
-  }
+  //   // One by one extract an element from heap
+  //   for (int i = n - 1; i >= 0; i--) {
+  //     // Move current root to end
+  //     int temp = heapArr[0];
+  //     heapArr[0] = heapArr[i];
+  //     heapArr[i] = temp;
+  //     await _updateArrayWithDelay(heapArr);
+  //     // call max heapify on the reduced heap
+  //     await heapify(heapArr, i, 0);
+  //   }
+  // }
 
   heapify(List<int> heapArr, int n, int i) async {
     int largest = i;
@@ -263,17 +264,29 @@ class _VisualState extends State<Visual> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromARGB(255, 21, 96, 139),
+      color: const Color.fromARGB(255, 21, 96, 139),
       child: Column(children: [
+        ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Sort()),
+            );
+          },
+          child: const Text('Analyzer',
+              style: TextStyle(
+                height: 1,
+                fontSize: 15,
+                color: Color.fromARGB(255, 255, 255, 255),
+              )),
+        ),
         TextButton(
-          // color:Colors.white,
-          // style : (color: Color.white),
           onPressed: () {
             bubblesort(arr);
           },
           child: const Text('BubbleSort',
               style: TextStyle(
-                height: 4,
+                height: 2,
                 fontSize: 20,
                 color: Color.fromARGB(255, 255, 255, 255),
               )),
@@ -322,8 +335,8 @@ class _VisualState extends State<Visual> {
                 color: Color.fromARGB(255, 255, 255, 255),
               )),
         ),
-        SizedBox(height: 100),
-        Container(
+        const SizedBox(height: 100),
+        Center(
           child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: arr.map((val) => _widget(val.toDouble())).toList()),
@@ -339,6 +352,7 @@ Widget _widget(double h) {
     child: Container(
         height: h * 2,
         width: 10,
-        decoration: BoxDecoration(color: Color.fromARGB(255, 255, 255, 255))),
+        decoration:
+            const BoxDecoration(color: Color.fromARGB(255, 255, 255, 255))),
   );
 }

@@ -10,10 +10,12 @@ void main() {
     FlutterError.presentError(details);
   };
 
-  runApp(MaterialApp(home: Sort()));
+  runApp(const MaterialApp(home: Sort()));
 }
 
 class Sort extends StatefulWidget {
+  const Sort({Key? key}) : super(key: key);
+
   @override
   Sorting createState() => Sorting();
 }
@@ -53,7 +55,7 @@ class Sorting extends State<Sort> {
   }
 
   void insertionsort(List a) {
-    Stopwatch stopwatch2 = new Stopwatch()..start();
+    Stopwatch stopwatch2 = Stopwatch()..start();
     for (var i = 0; i < a.length; i++) {
       var x = a[i], j = i;
 
@@ -72,8 +74,9 @@ class Sorting extends State<Sort> {
   }
 
   void selectionsort(List a) {
-    Stopwatch stopwatch3 = new Stopwatch()..start();
+    Stopwatch stopwatch3 = Stopwatch()..start();
     for (var i = a.length - 1; i >= 0; i--) {
+      // ignore: prefer_typing_uninitialized_variables
       var first = 0, tmp;
 
       for (var j = 1; j <= i; j++) {
@@ -122,7 +125,7 @@ class Sorting extends State<Sort> {
   }
 
   void heapSort(List list) {
-    Stopwatch stopwatch4 = new Stopwatch()..start();
+    Stopwatch stopwatch4 = Stopwatch()..start();
     int n = list.length;
     for (int i = (n ~/ 2); i >= 0; i--) {
       heapify(list, n, i);
@@ -175,7 +178,7 @@ class Sorting extends State<Sort> {
 // }
 
   void mergeSort(List list, int leftIndex, int rightIndex) {
-    Stopwatch stopwatch5 = new Stopwatch()..start();
+    Stopwatch stopwatch5 = Stopwatch()..start();
     if (leftIndex < rightIndex) {
       int middleIndex = (rightIndex + leftIndex) ~/ 2;
 
@@ -196,36 +199,32 @@ class Sorting extends State<Sort> {
 
   @override
   Widget build(BuildContext context) {
-    print(list);
+    // print(list);
     return Material(
-      color: Color.fromARGB(255, 21, 96, 139),
+      color: const Color.fromARGB(255, 21, 96, 139),
       child: SingleChildScrollView(
         child: Column(children: <Widget>[
-          SizedBox(height: 50),
-          Container(
-            child: Text(
-              'Sorting Algorithm Analyzer',
-              style: GoogleFonts.firaCode(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
-            ),
+          const SizedBox(height: 50),
+          Text(
+            'Sorting Algorithm Analyzer',
+            style: GoogleFonts.firaCode(
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           Center(
-            child: Container(
+            child: SizedBox(
               width: 250,
               child: ReactiveForm(
-                formGroup: this.form,
+                formGroup: form,
                 child: Column(
                   children: <Widget>[
                     ElevatedButton(
                       child: const Text('Visualizer'),
-                      // color: Colors.black,
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Visual()),
+                          MaterialPageRoute(
+                              builder: (context) => const Visual()),
                         );
                       },
                     ),
@@ -237,7 +236,7 @@ class Sorting extends State<Sort> {
                           height: 2,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Container(
                       color: Colors.white,
                       child: ReactiveTextField(
@@ -249,12 +248,12 @@ class Sorting extends State<Sort> {
               ),
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             'Array: ' + list.toString(),
             style: GoogleFonts.abel(
                 fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 255, 255, 255),
+                color: const Color.fromARGB(255, 255, 255, 255),
                 fontSize: 20,
                 height: 1.8),
           ),
@@ -267,62 +266,62 @@ class Sorting extends State<Sort> {
               insertionsort(list);
               mergeSort(list, 0, list.length - 1);
             },
-            icon: Icon(Icons.sort),
+            icon: const Icon(Icons.sort),
             label: Text(
               'ANALYZE NOW',
-              style:
-                  GoogleFonts.abel(color: Color.fromARGB(255, 255, 255, 255)),
+              style: GoogleFonts.abel(
+                  color: const Color.fromARGB(255, 255, 255, 255)),
             ),
           ),
-          SizedBox(height: 50),
-          Container(
+          const SizedBox(height: 50),
+          SizedBox(
             width: 250,
             height: 55,
             child: Card(
                 child: ListTile(
-              leading: FlutterLogo(size: 20.0),
+              leading: const FlutterLogo(size: 20.0),
               title: Text('Bubble Sort: ' + bubble.toString() + ' us',
                   style: GoogleFonts.abel(fontWeight: FontWeight.bold)),
             )),
           ),
-          Container(
+          SizedBox(
             width: 250,
             height: 55,
             child: Card(
                 child: ListTile(
-              leading: FlutterLogo(size: 20.0),
+              leading: const FlutterLogo(size: 20.0),
               title: Text('Heap Sort: ' + heap.toString() + ' us',
                   style: GoogleFonts.abel(fontWeight: FontWeight.bold)),
             )),
           ),
-          Container(
+          SizedBox(
             width: 250,
             height: 55,
             child: Card(
                 child: ListTile(
-              leading: FlutterLogo(size: 20.0),
+              leading: const FlutterLogo(size: 20.0),
               title: Text('Selection Sort: ' + selection.toString() + ' us',
                   style: GoogleFonts.abel(fontWeight: FontWeight.bold)),
             )),
           ),
-          Container(
+          SizedBox(
             width: 250,
             height: 55,
             child: Card(
                 child: ListTile(
-              leading: FlutterLogo(size: 20.0),
+              leading: const FlutterLogo(size: 20.0),
               title: Text(
                 'Insertion Sort: ' + insertion.toString() + ' us',
                 style: GoogleFonts.abel(fontWeight: FontWeight.bold),
               ),
             )),
           ),
-          Container(
+          SizedBox(
             width: 250,
             height: 55,
             child: Card(
                 child: ListTile(
-              leading: FlutterLogo(size: 20.0),
+              leading: const FlutterLogo(size: 20.0),
               title: Text(
                 'Merge Sort: ' + merge.toString() + ' us',
                 style: GoogleFonts.abel(fontWeight: FontWeight.bold),

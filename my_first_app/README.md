@@ -11,15 +11,14 @@ Click here and install APK
 3. in the top, you can move to the visualization page by clicking on the button.
 
 # Build Using
-### Dart - Programming Language based on OOP
-### Flutter - Cross Platform that will create hybrid application (android and ios)
+ Dart - Programming Language based on OOP
+ Flutter - Cross Platform that will create hybrid application (android and ios)
 
 
 ## 📝 Table of Contents
 
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Usage](#usage)
 - [Built Using](#built_using)
 - [Guided By](#guided_by)
 
@@ -28,18 +27,10 @@ Click here and install APK
 The safe house for charitable services, we seek to spread love and goodness among people and enhance human values among individuals, the company’s goal is to raise the banner of “goodness in my nation until the Day of Resurrection”, “people for people”
 
 
-## 🎈 Usage <a name="usage"></a>
+ ## ⛏️ Built Using <a name = "built_using"></a>
 1. you will see the analyzer page.
 2. you can add an array to the input field and click analyze.
 3. in the top, you can move to the visualization page by clicking on the button.
-
-
- ## ⛏️ Built Using <a name = "built_using"></a>
-
-- [MySQL](https://www.mysql.com/) - Database
-- [Express JS](https://expressjs.com/) - Server Framework
-- [React JS](https://https://reactjs.org/) - Web Framework
-- [Node JS](https://nodejs.org/en/) - Server Environment
 
 
 

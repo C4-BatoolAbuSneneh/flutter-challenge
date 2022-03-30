@@ -20,7 +20,7 @@ Click here and install APK
 
 ## 🧐 About <a name = "about"></a>
 
-The you will see the analyzer page, you can add an array to the input field and click analyze,in the top, you can move to the visualization page by clicking on the button.
+You will see the analyzer page, you can add an array to the input field and click analyze,in the top, you can move to the visualization page by clicking on the button.
 
 ## 🎈 Usage <a name="usage"></a>
 1. you will see the analyzer page.

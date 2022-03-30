@@ -4,11 +4,6 @@ This project is a starting point for a flutter application.
 ## Demo APK 
 Click here and install APK 
 
-## Usage
-
-1. you will see the analyzer page.
-2. you can add an array to the input field and click analyze.
-3. in the top, you can move to the visualization page by clicking on the button.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 #### Dart - Programming Language based on OOP
@@ -24,8 +19,7 @@ Click here and install APK
 
 ## 🧐 About <a name = "about"></a>
 
-The safe house for charitable services, we seek to spread love and goodness among people and enhance human values among individuals, the company’s goal is to raise the banner of “goodness in my nation until the Day of Resurrection”, “people for people”
-
+The you will see the analyzer page, you can add an array to the input field and click analyze,in the top, you can move to the visualization page by clicking on the button.
 
 ## 🎈 Usage <a name="usage"></a>
 1. you will see the analyzer page.

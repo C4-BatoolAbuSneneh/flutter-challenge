@@ -15,6 +15,7 @@ Click here and install APK
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Built Using](#built_using)
+- [Usage](#usage)
 - [Guided By](#guided_by)
 
 ## 🧐 About <a name = "about"></a>

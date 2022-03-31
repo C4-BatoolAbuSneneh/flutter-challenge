@@ -1,8 +1,8 @@
 ## 🏁 Getting Started <a name = "getting_started"></a>
 This project is a starting point for a flutter application.
 
-## Demo APK 
-Click here and install APK 
+<!-- ## Demo APK  -->
+<!-- Click here and install APK  -->
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
